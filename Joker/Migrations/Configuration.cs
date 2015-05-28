@@ -22,10 +22,11 @@ namespace Joker.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            //context.Jokes.AddOrUpdate(
-            //  p => p.JokeTitle,
-            //  new Joke { JokeTitle = "What's a drummer with half a brain?", ApplicationUserId = context.Users.FirstOrDefault(x => x.Id == "8fbf92e5-8384-45bc-933b-5f3020d2503b").ToString()}
-            //);
+            context.Jokes.AddOrUpdate(
+              p => p.JokeTitle,
+              new Joke { JokeTitle = "What's a drummer with half a brain?" },
+              new Joke { JokeTitle = "Why did the chicken cross the road?" }
+            );
             
         }
     }
