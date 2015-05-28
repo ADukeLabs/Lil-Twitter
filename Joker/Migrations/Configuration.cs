@@ -1,5 +1,3 @@
-using Joker.Models;
-
 namespace Joker.Migrations
 {
     using System;
@@ -12,7 +10,6 @@ namespace Joker.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Joker.Models.ApplicationDbContext";
         }
 
         protected override void Seed(Joker.Models.ApplicationDbContext context)
@@ -22,12 +19,13 @@ namespace Joker.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            context.Jokes.AddOrUpdate(
-              p => p.JokeTitle,
-              new Joke { JokeTitle = "What's a drummer with half a brain?" },
-              new Joke { JokeTitle = "Why did the chicken cross the road?" }
-            );
-            
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
         }
     }
 }

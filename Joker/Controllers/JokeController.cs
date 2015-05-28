@@ -28,7 +28,10 @@ namespace Joker.Controllers
         // GET: Joke
         public ActionResult Index()
         {
-             JokeViewModel jvm = new JokeViewModel();
+            JokeViewModel jvm = new JokeViewModel();
+            var id = User.Identity.GetUserId();
+            jvm.user = UserManager.FindById(id).UserName;
+             
             jvm.JokeList = db.Jokes.ToList();
 
             jvm.joke = new Joke();
@@ -56,6 +59,7 @@ namespace Joker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         //[ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create(Joke joke)
         {
             if (ModelState.IsValid)
