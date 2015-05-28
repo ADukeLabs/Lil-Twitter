@@ -39,13 +39,17 @@
     </div>
   </div>
 
+}
 
-
-
-}  
 @foreach (var item in Model.JokeList) {
     <tr>
         <td>
+            @{
+                string[] t = Model.user.Split('@');
+            }
+
+            @Html.DisplayName(t[0])
+            <br/>
             @Html.DisplayFor(modelItem => item.JokeTitle)
             @*@Html.DisplayFor(modelItem => item)*@
         </td>

@@ -12,7 +12,7 @@ namespace Joker.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        JokeTitle = c.String(),
+                        JokeTitle = c.String(nullable: false, maxLength: 140),
                         ApplicationUser_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
