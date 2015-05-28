@@ -40,10 +40,30 @@ namespace Joker.Controllers
         [Authorize]
         public ActionResult Profile()
         {
-            
+
             var currentUser = UserManager.FindById(User.Identity.GetUserId());
             var jokes = currentUser.Jokes.ToList();
             return View(jokes);
         }
+        //[HttpPost]
+        ////[ValidateAntiForgeryToken]
+        //[Authorize]
+        //public ActionResult Profile(Joke joke)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        var id = User.Identity.GetUserId();
+        //        joke.ApplicationUser = UserManager.FindById(id);
+
+        //        //var UserFromDb = db.Users.Single(s => s.Id == id)
+
+        //        db.Jokes.Add(joke);
+        //        db.SaveChanges();
+        //        return View();
+        //    }
+
+        //    return View();
+        //}
+
     }
 }

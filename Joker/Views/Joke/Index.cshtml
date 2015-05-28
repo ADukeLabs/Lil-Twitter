@@ -31,10 +31,7 @@
             @Html.EditorFor(model => model.joke.JokeTitle, new {htmlAttributes = new {@class = "form-control"}})
             
             @Html.ValidationMessageFor(model => model.joke.JokeTitle, "", new {@class = "text-danger"})
-            @*<div
-                class="col-md-offset-4 col-md-10">*@
-            <input type="submit" value="Create" class="col-md-offset-4 col-md-50"   />
-            @*</div>*@
+           <input type="submit" value="Create" class="col-md-offset-4 col-md-50"   />
         </div>
     </div>
   </div>
@@ -44,16 +41,19 @@
 @foreach (var item in Model.JokeList) {
     <tr>
         <td>
-            @{
-                string[] t = Model.user.Split('@');
-            }
 
-            @Html.DisplayName(t[0])
-            <br/>
-            @Html.DisplayFor(modelItem => item.JokeTitle)
-            @*@Html.DisplayFor(modelItem => item)*@
-        </td>
-     
+            <p>
+                @item.ApplicationUser.UserName.Split('@')[0]
+            @Html.ActionLink("Follow", "Profile", "Home", new { id = item.Id }, null)
+        </p>
+
+        <br />
+
+        @Html.DisplayFor(modelItem => item.JokeTitle)
+
+
+    </td>
+    
     </tr>
 }
 

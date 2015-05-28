@@ -6,40 +6,21 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 using Joker.Models;
-using Microsoft.Ajax.Utilities;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Joker.Controllers
 {
-    public class JokeController : Controller
+    public class testController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        protected UserManager<ApplicationUser> UserManager { get; set; }
 
-        public JokeController()
-        {
-            UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-        }
-
-
-        // GET: Joke
+        // GET: test
         public ActionResult Index()
         {
-            JokeViewModel jvm = new JokeViewModel();
-            var id = User.Identity.GetUserId();
-            jvm.user = UserManager.FindById(id).UserName;
-             
-            jvm.JokeList = db.Jokes.ToList();
-
-            jvm.joke = new Joke();
-            return View(jvm);
+            return View(db.Jokes.ToList());
         }
 
-
-        // GET: Joke/Details/5
+        // GET: test/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -54,30 +35,30 @@ namespace Joker.Controllers
             return View(joke);
         }
 
-     // POST: Joke/Create
+        // GET: test/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: test/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        //[ValidateAntiForgeryToken]
-        [Authorize]
-        public ActionResult Create(Joke joke)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,JokeTitle")] Joke joke)
         {
             if (ModelState.IsValid)
             {
-                var id = User.Identity.GetUserId();
-                joke.ApplicationUser = UserManager.FindById(id);
-
-                //var UserFromDb = db.Users.Single(s => s.Id == id);
-
                 db.Jokes.Add(joke);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return RedirectToAction("Index");
+            return View(joke);
         }
 
-        // GET: Joke/Edit/5
+        // GET: test/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -92,12 +73,12 @@ namespace Joker.Controllers
             return View(joke);
         }
 
-        // POST: Joke/Edit/5
+        // POST: test/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit( Joke joke)
+        public ActionResult Edit([Bind(Include = "Id,JokeTitle")] Joke joke)
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +89,7 @@ namespace Joker.Controllers
             return View(joke);
         }
 
-        // GET: Joke/Delete/5
+        // GET: test/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -123,7 +104,7 @@ namespace Joker.Controllers
             return View(joke);
         }
 
-        // POST: Joke/Delete/5
+        // POST: test/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -142,10 +123,5 @@ namespace Joker.Controllers
             }
             base.Dispose(disposing);
         }
-
-        //public ActionResult Profilemm(string s)
-        //{
-        //    return Redirect("Profile","Home");
-        //}
     }
 }
