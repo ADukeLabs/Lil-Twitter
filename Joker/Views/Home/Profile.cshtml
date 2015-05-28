@@ -1,0 +1,13 @@
+﻿
+@model IEnumerable<Joker.Models.Joke>
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+<h2>Profile</h2>
+
+@foreach (var joke in Model)
+{
+    <p>@joke.JokeTitle</p>
+}
