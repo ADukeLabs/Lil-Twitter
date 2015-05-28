@@ -10,6 +10,5 @@ namespace Joker.Models
         public int Id { get; set; }
         public string JokeTitle { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
-
     }
 }

@@ -7,13 +7,13 @@ namespace Joker.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class Datatype_ToString : IMigrationMetadata
+    public sealed partial class init : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Datatype_ToString));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(init));
         
         string IMigrationMetadata.Id
         {
-            get { return "201505272335548_Datatype_ToString"; }
+            get { return "201505280423456_init"; }
         }
         
         string IMigrationMetadata.Source
