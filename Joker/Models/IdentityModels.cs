@@ -27,10 +27,12 @@ namespace Joker.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-        public  DbSet<Joke> Jokes { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Joke> Jokes { get; set; }
     }
 }

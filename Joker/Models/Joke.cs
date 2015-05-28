@@ -14,6 +14,5 @@ namespace Joker.Models
         [Display(Name = "Latest...")]
         public string JokeTitle { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
-
     }
 }
