@@ -144,6 +144,25 @@ namespace Joker.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult Tweet(int? id)
+        {
+
+
+            var currentUser = UserManager.FindById(User.Identity.GetUserId());
+
+
+            Joke currentJokeke = db.Jokes.Find(id);
+            var joke = new Joke();
+            joke.JokeTitle = currentJokeke.JokeTitle;
+            joke.ApplicationUser= currentUser;
+            db.Jokes.Add(joke);
+            db.SaveChanges();
+
+
+
+
+            return RedirectToAction("Index");
+        }
 
         //public ActionResult Profilemm(string s)
         //{
