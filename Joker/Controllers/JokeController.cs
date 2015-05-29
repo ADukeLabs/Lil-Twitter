@@ -26,6 +26,7 @@ namespace Joker.Controllers
 
 
         // GET: Joke
+         [Authorize]
         public ActionResult Index()
         {
             JokeViewModel jvm = new JokeViewModel();
@@ -40,6 +41,7 @@ namespace Joker.Controllers
 
 
         // GET: Joke/Details/5
+         [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
