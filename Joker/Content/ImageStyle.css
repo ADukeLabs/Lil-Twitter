@@ -1,0 +1,11 @@
+﻿#my_logo {
+position: absolute; 
+  top: 12pt; 
+  left: 24pt;
+ 
+	
+  /* Preserve aspet ratio */
+    width: 50%;
+    height: 50%;
+}
+

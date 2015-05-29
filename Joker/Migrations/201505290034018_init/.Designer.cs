@@ -13,7 +13,7 @@ namespace Joker.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201505280511341_init"; }
+            get { return "201505290034018_init"; }
         }
         
         string IMigrationMetadata.Source
