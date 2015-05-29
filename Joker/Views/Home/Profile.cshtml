@@ -12,11 +12,16 @@
     <p>@joke.JokeTitle</p>
 }
 
-<h3>People you follow</h3>
-@foreach (var person in Model.JokeList)
+<h3>People You Follow</h3>
+
+@foreach (var x in Model.Following)
 {
-    <p>
-        @person.ApplicationUser.UserName
-        @person.ApplicationUser.Following.FirstOrDefault()
-    </p>
+    <p>@x.UserName</p>
+}
+
+<h3>Following You</h3>
+
+@foreach (var x in Model.Followers)
+{
+    <p>@x.UserName</p>
 }

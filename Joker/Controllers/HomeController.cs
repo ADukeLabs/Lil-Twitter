@@ -38,41 +38,32 @@ namespace Joker.Controllers
             return View();
         }
         [Authorize]
-        public ActionResult Profile(int jokeId)
+        public ActionResult Profile()
         {
             JokeViewModel jvm = new JokeViewModel();
             
             var currentUser = UserManager.FindById(User.Identity.GetUserId());
-            var jokes = currentUser.Jokes.ToList();
-
-
-            var joke = db.Jokes.Find(jokeId);
-            joke.ApplicationUser.Followers.Add(currentUser);
-
-            db.SaveChanges();
+            
             jvm.JokeList = currentUser.Jokes.ToList();
             jvm.joke = new Joke();
+            jvm.Following = currentUser.Following;
+            jvm.Followers = currentUser.Followers;
             return View(jvm);
         }
-        //[HttpPost]
-        ////[ValidateAntiForgeryToken]
-        //[Authorize]
-        //public ActionResult Profile(Joke joke)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var id = User.Identity.GetUserId();
-        //        joke.ApplicationUser = UserManager.FindById(id);
 
-        //        //var UserFromDb = db.Users.Single(s => s.Id == id)
+        [Authorize]
+        public ActionResult Following(int jokeId)
+        {
+           var currentUser = UserManager.FindById(User.Identity.GetUserId());
+        
+            var joke = db.Jokes.Find(jokeId);
 
-        //        db.Jokes.Add(joke);
-        //        db.SaveChanges();
-        //        return View();
-        //    }
+            currentUser.Following.Add(joke.ApplicationUser);
 
-        //    return View();
-        //}
 
+            db.SaveChanges();
+           
+            return RedirectToAction("Profile");
+        }
     }
 }
