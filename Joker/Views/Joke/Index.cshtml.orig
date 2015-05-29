@@ -45,11 +45,12 @@
             <p>
             @item.ApplicationUser.UserName.Split('@')[0]
             @Html.ActionLink("Follow", "Following", "Home", new { jokeId = item.Id }, null)
-        </p>
-		<p>
+<<<<<<< HEAD
+            </p>
+=======
                 @Html.ActionLink("Retweet", "Tweet", new { Id = item.Id })
         </p>
-            
+>>>>>>> 51faee3dfc6f36d2a2b20bf582454eee96dc0b83
 
 
             <p class="jokefont">@Html.DisplayFor(modelItem => item.JokeTitle)</p>
