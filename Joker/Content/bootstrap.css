@@ -761,6 +761,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+    
 }
 
 .container:before,
@@ -4947,6 +4948,7 @@ a.list-group-item.active > .badge,
 }
 
 .container .jumbotron {
+   background-color: #398439;
   border-radius: 6px;
 }
 
@@ -4996,7 +4998,7 @@ a.thumbnail:focus {
 
 .thumbnail .caption {
   padding: 9px;
-  color: #333333;
+  color: green;
 }
 
 .alert {

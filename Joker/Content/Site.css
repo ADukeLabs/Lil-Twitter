@@ -1,12 +1,16 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image:url("http://s3.amazonaws.com/spoonflower/public/design_thumbnails/0102/2373/rcircus-stripesNCPRGB_repeat_preview.png");
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    background-color: black;
     padding-left: 15px;
     padding-right: 15px;
+    color: white;
+    
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +25,8 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.form-control {
+    display: initial;
 }
