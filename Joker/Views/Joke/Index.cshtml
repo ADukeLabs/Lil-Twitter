@@ -45,6 +45,7 @@
             <p>
                 @item.ApplicationUser.UserName.Split('@')[0]
             @Html.ActionLink("Follow", "Following", "Home", new { jokeId = item.Id }, null)
+                @Html.ActionLink("Retweet", "Tweet", new { Id = item.Id })
         </p>
 
         <br />
