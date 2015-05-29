@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<Joker.Models.Joke>
+@model  Joker.Models.JokeViewModel
 
 @{
     ViewBag.Title = "Profile";
@@ -7,7 +7,16 @@
 
 <h2>Profile</h2>
 
-@foreach (var joke in Model)
+@foreach (var joke in Model.JokeList)
 {
     <p>@joke.JokeTitle</p>
+}
+
+<h3>People you follow</h3>
+@foreach (var person in Model.JokeList)
+{
+    <p>
+        @person.ApplicationUser.UserName
+        @person.ApplicationUser.Following.FirstOrDefault()
+    </p>
 }

@@ -10,5 +10,6 @@ namespace Joker.Models
         public IEnumerable<Joker.Models.Joke> JokeList { get; set; }
         public Joke joke { get; set; }
         public string user { get; set; }
+
     }
 }
