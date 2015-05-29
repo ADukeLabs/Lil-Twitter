@@ -11,7 +11,7 @@ namespace Joker.Models
         public int Id { get; set; }
         [MaxLength(140)]
         [Required]
-        [Display(Name = "Make us Laugh")]
+        [Display(Name = "")]
         public string JokeTitle { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
     }

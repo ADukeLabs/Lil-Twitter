@@ -6,7 +6,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>JokerFeed</h2>
+<h2>Joker Feed</h2>
 
 
 <table class="table">
@@ -43,13 +43,13 @@
         <td>
 
             <p>
-                @item.ApplicationUser.UserName.Split('@')[0]
+            @item.ApplicationUser.UserName.Split('@')[0]
             @Html.ActionLink("Follow", "Following", "Home", new { jokeId = item.Id }, null)
-        </p>
+            </p>
 
-        <br />
 
-        @Html.DisplayFor(modelItem => item.JokeTitle)
+            <p class="jokefont">@Html.DisplayFor(modelItem => item.JokeTitle)</p>
+            <p class="joketold">Joke told at :@DateTime.Now</p>
 
 
     </td>

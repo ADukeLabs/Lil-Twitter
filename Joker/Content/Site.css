@@ -9,7 +9,7 @@
     background-color: black;
     padding-left: 15px;
     padding-right: 15px;
-    color: white;
+    color: WHITE;
     
 }
 
@@ -29,4 +29,12 @@ textarea {
 
 .form-control {
     display: initial;
+}
+
+.joketold {
+    font-size: 10px;
+}
+
+.jokefont {
+    font-size: 30px;
 }
