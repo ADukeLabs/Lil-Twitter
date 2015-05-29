@@ -26,7 +26,7 @@
       
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
-        @*@Html.LabelFor(model => model.joke.JokeTitle, new { htmlAttributes = new {@class = "control-label col-md-2"}})*@
+        @Html.LabelFor(model => model.joke.JokeTitle, new { htmlAttributes = new {@class = "control-label col-md-2"}})
         <div class="col-md-10">
             @Html.EditorFor(model => model.joke.JokeTitle, new {htmlAttributes = new {@class = "form-control"}})
             
@@ -44,16 +44,16 @@
 
             <p>
             @item.ApplicationUser.UserName.Split('@')[0]
-   
+            @Html.ActionLink("Follow", "Following", "Home", new { jokeId = item.Id }, null)
+<<<<<<< HEAD
+            </p>
+=======
+                @Html.ActionLink("Retweet", "Tweet", new { Id = item.Id })
         </p>
+>>>>>>> 51faee3dfc6f36d2a2b20bf582454eee96dc0b83
+
 
             <p class="jokefont">@Html.DisplayFor(modelItem => item.JokeTitle)</p>
-            <p>@Html.ActionLink("Follow", "Following", "Home", new { jokeId = item.Id }, null)</p>
-            <p>
-
-                @Html.ActionLink("Tell a friend", "Tweet", new {Id = item.Id})
-
-            </p>
             <p class="joketold">Joke told at :@DateTime.Now</p>
 
 

@@ -166,17 +166,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505280511341_init.cs" />
-    <Compile Include="Migrations\201505280511341_init.Designer.cs">
-      <DependentUpon>201505280511341_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505282217215_many_to_manyexit.cs" />
-    <Compile Include="Migrations\201505282217215_many_to_manyexit.Designer.cs">
-      <DependentUpon>201505282217215_many_to_manyexit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505290234344_deleteddata.cs" />
-    <Compile Include="Migrations\201505290234344_deleteddata.Designer.cs">
-      <DependentUpon>201505290234344_deleteddata.cs</DependentUpon>
+    <Compile Include="Migrations\201505290311080_init.cs" />
+    <Compile Include="Migrations\201505290311080_init.Designer.cs">
+      <DependentUpon>201505290311080_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -266,11 +258,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201505290034018_init\.resx">
-      <DependentUpon>.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505290234344_deleteddata.resx">
-      <DependentUpon>201505290234344_deleteddata.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505290311080_init.resx">
+      <DependentUpon>201505290311080_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
