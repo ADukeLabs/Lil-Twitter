@@ -7,6 +7,8 @@ namespace Joker.Models
 {
     public class JokeViewModel
     {
+
+        
         public IEnumerable<Joker.Models.Joke> JokeList { get; set; }
         public Joke joke { get; set; }
         public string user { get; set; }
